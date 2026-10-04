@@ -636,7 +636,7 @@ function renderQ(){
   if (qi >= QUIZ.length){ qQ.textContent = `You matched ${score} of ${QUIZ.length}.`; qF.className = 'feedback'; qF.textContent = 'The pattern: channels take years, happen in person around shared work, follow direction, and change you. Everything else is a doorway at best.'; qN.hidden = false; qN.textContent = 'Start over'; return; }
   qQ.textContent = QUIZ[qi].q; qF.className = 'feedback'; qF.textContent = 'Choose an answer to see why.'; qN.hidden = true; qAns = false;
 }
-document.querySelectorAll('#test .quiz-btns button').forEach((b) => b.addEventListener('click', () => {
+document.querySelectorAll('.quiz-btns button').forEach((b) => b.addEventListener('click', () => {
   if (qi >= QUIZ.length || qAns) return;
   const it = QUIZ[qi], ok = b.dataset.a === it.a; qAns = true; if (ok) score++;
   qF.className = 'feedback ' + (ok ? 'ok' : 'no');
